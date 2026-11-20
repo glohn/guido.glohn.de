@@ -1,0 +1,16 @@
+# OpenTofu
+account.auto.tfvars
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfplan
+crash.log
+.terraform.tfstate.lock.info
+
+# Python / uv
+__pycache__/
+.venv/
+
+# OS / editors
+.DS_Store
+*.swp

@@ -1,0 +1,3 @@
+# Copy to account.auto.tfvars (git-ignored) and fill in.
+# Get the ID with: aws sts get-caller-identity --query Account --output text
+aws_account_id = "123456789012"

@@ -1,0 +1,359 @@
+/* Black with blueprint accents. Colours are taken from the profile portrait:
+   #00347d blueprint blue, #135ba1 grid lines, #e8ecf3 line work, #9da8bb details. */
+:root {
+  --bg: #0b0c10;
+  --panel: #12151c;
+  --ink: #e8ecf3;
+  --muted: #9da8bb;
+  --line: #1e2a40;
+  --line-strong: #3b5f91;
+  --blueprint: #00347d;
+  --grid: 19 91 161; /* #135ba1 as RGB triplet for the background grid */
+  --accent: #7fb0ff;
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2.5rem 1rem 2rem;
+  background-color: var(--bg);
+  /* Blueprint grid: major lines every 120px, minor every 24px */
+  background-image:
+    linear-gradient(rgb(var(--grid) / 16%) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(var(--grid) / 16%) 1px, transparent 1px),
+    linear-gradient(rgb(var(--grid) / 6%) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(var(--grid) / 6%) 1px, transparent 1px);
+  background-size: 120px 120px, 120px 120px, 24px 24px, 24px 24px;
+  background-position: center top;
+  color: var(--ink);
+  font: 16px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+a {
+  color: inherit;
+}
+
+main {
+  width: 100%;
+  max-width: 28rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+/* Intro */
+.intro {
+  text-align: center;
+}
+
+.avatar {
+  display: block;
+  width: 112px;
+  height: 112px;
+  margin: 0 auto 1rem;
+  border-radius: 50%;
+  object-fit: cover;
+  background: var(--blueprint);
+  /* Thin outer ring like a construction circle */
+  box-shadow: 0 0 0 4px var(--bg), 0 0 0 5px var(--line-strong);
+}
+
+h1 {
+  font-size: 1.75rem;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.role {
+  margin-top: 0.35rem;
+  font-weight: 600;
+}
+
+/* Break only between the two titles, never inside one */
+.role span {
+  white-space: nowrap;
+}
+
+.place {
+  margin-top: 0.1rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.pitch {
+  margin-top: 0.75rem;
+}
+
+/* Link tiles */
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.9rem 1.1rem;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--panel);
+  text-decoration: none;
+  transition: border-color 0.15s, transform 0.15s;
+}
+
+.link:hover,
+.link:focus-visible {
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
+
+.link:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.icon {
+  width: 28px;
+  height: 28px;
+  flex: none;
+}
+
+.icon-brand {
+  fill: currentColor;
+}
+
+.icon-line {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.label {
+  display: block;
+  font-weight: 600;
+}
+
+.sub {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.link.primary {
+  border-color: var(--line-strong);
+  background: var(--blueprint);
+  color: #fff;
+}
+
+.link.primary .sub {
+  color: inherit;
+  opacity: 0.85;
+}
+
+/* Section labels in monospace, like annotations on a technical drawing */
+h2 {
+  margin-bottom: 0.6rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--muted);
+}
+
+.group {
+  margin: 0.9rem 0 0.45rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-align: center;
+  color: var(--ink);
+}
+
+h2 + .group {
+  margin-top: 0;
+}
+
+/* Chips */
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0;
+  list-style: none;
+}
+
+.chips li {
+  padding: 0.25rem 0.65rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--panel);
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+/* Certifications with expiry date */
+.certs {
+  padding: 0;
+  list-style: none;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--panel);
+}
+
+.certs li {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.15rem 1rem;
+  padding: 0.65rem 1rem;
+  font-size: 0.9rem;
+}
+
+.certs li + li {
+  border-top: 1px solid var(--line);
+}
+
+.certs .when {
+  font-size: 0.85rem;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.certs .valid {
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.verify {
+  margin-top: 0.5rem;
+  text-align: center;
+  font-size: 0.85rem;
+}
+
+.verify a {
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* Share card */
+.share {
+  display: grid;
+  grid-template-columns: 112px 1fr;
+  gap: 1rem;
+  align-items: center;
+  padding: 1rem;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--panel);
+}
+
+.share img {
+  width: 112px;
+  height: 112px;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.share h2 {
+  margin-bottom: 0.25rem;
+  font-family: inherit;
+  font-size: 1rem;
+  letter-spacing: 0;
+  text-transform: none;
+  text-align: left;
+  color: var(--ink);
+}
+
+.share p {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.share a {
+  display: inline-block;
+  margin-top: 0.35rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+footer {
+  margin-top: 2.5rem;
+  font-size: 0.8rem;
+  color: var(--muted);
+  text-align: center;
+}
+
+/* Full-screen QR page: always white, maximum contrast for scanners */
+.qr-page {
+  min-height: 100vh;
+  min-height: 100svh;
+  justify-content: center;
+  gap: 1.25rem;
+  padding: 1.5rem 1rem;
+  background: #fff;
+  color: #111;
+  text-align: center;
+  color-scheme: light;
+}
+
+.qr-page .qr {
+  width: min(88vw, 68vh);
+  width: min(88vw, 68svh);
+  height: auto;
+  aspect-ratio: 1;
+}
+
+.qr-page .who {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.qr-page .url {
+  color: #444;
+}
+
+.qr-page nav {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 0.9rem;
+}
+
+.qr-page nav a {
+  color: var(--blueprint);
+}
+
+/* 404 */
+.notfound {
+  text-align: center;
+}
+
+.notfound p {
+  margin-top: 0.75rem;
+  color: var(--muted);
+}
+
+.notfound a {
+  color: var(--accent);
+  font-weight: 600;
+}
