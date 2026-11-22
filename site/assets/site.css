@@ -423,3 +423,23 @@ footer a {
   color: var(--accent);
   font-weight: 600;
 }
+
+/* Larger tap targets for the small text links (WCAG 2.2, 2.5.8: at least 24 px).
+   Vertical padding on inline links enlarges the clickable area without moving the layout. */
+.verify a,
+.share a,
+footer a,
+.qr-page nav a,
+.notfound a {
+  padding-block: 0.3rem;
+}
+
+/* These two are boxes (inline-block, flex items): compensate the padding so nothing moves */
+.share a {
+  margin-top: 0.05rem; /* 0.35rem minus the 0.3rem padding */
+  margin-bottom: -0.3rem;
+}
+
+.qr-page nav a {
+  margin-block: -0.3rem;
+}
