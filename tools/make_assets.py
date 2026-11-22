@@ -34,6 +34,7 @@ FULL_NAME = f"{FIRST_NAME} {LAST_NAME}"
 TITLE = "Senior Operations Engineer · AI Engineer"  # page and preview card
 VCARD_TITLE = "Senior Operations Engineer"  # official job title, used with ORG in the vCard
 ORG = "brickfox GmbH"  # legal name for the address book; the page shows the brand "brickfox"
+EMAIL = "guido@glohn.de"  # personal contact address; kontakt@glohn.de stays in the privacy policy
 MONOGRAM = "GL"
 VCARD_LINKS = [
     ("Website", URL),
@@ -165,6 +166,7 @@ def make_vcard(real_photo: bool) -> None:
         f"FN:{FULL_NAME}",
         f"TITLE:{VCARD_TITLE}",
         f"ORG:{ORG}",
+        f"EMAIL;TYPE=INTERNET:{EMAIL}",
     ]
     for i, (label, url) in enumerate(VCARD_LINKS, start=1):
         lines += [f"item{i}.URL:{url}", f"item{i}.X-ABLabel:{label}"]
