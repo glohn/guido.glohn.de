@@ -326,6 +326,8 @@ footer {
 .qr-page .who {
   font-size: 1.25rem;
   font-weight: 600;
+  line-height: inherit; /* h1 for screen readers, same look as before */
+  letter-spacing: normal;
 }
 
 .qr-page .url {
