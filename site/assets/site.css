@@ -220,9 +220,8 @@ h2 + .group {
 
 .certs li {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 0.15rem 1rem;
+  flex-direction: column; /* date always below the name, on every screen width */
+  gap: 0.15rem;
   padding: 0.65rem 1rem;
   font-size: 0.9rem;
 }
