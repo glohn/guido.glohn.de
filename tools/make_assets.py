@@ -31,7 +31,8 @@ URL = "https://guido.glohn.de/"
 DISPLAY_URL = "guido.glohn.de"
 FIRST_NAME, LAST_NAME = "Guido", "Lohn"
 FULL_NAME = f"{FIRST_NAME} {LAST_NAME}"
-TITLE = "Senior Operations Engineer · AI Engineer"
+TITLE = "Senior Operations Engineer · AI Engineer"  # page and preview card
+VCARD_TITLE = "Senior Operations Engineer"  # official job title, used with ORG in the vCard
 ORG = "brickfox GmbH"  # legal name for the address book; the page shows the brand "brickfox"
 MONOGRAM = "GL"
 VCARD_LINKS = [
@@ -162,7 +163,7 @@ def make_vcard(real_photo: bool) -> None:
         "VERSION:3.0",
         f"N:{LAST_NAME};{FIRST_NAME};;;",
         f"FN:{FULL_NAME}",
-        f"TITLE:{TITLE}",
+        f"TITLE:{VCARD_TITLE}",
         f"ORG:{ORG}",
     ]
     for i, (label, url) in enumerate(VCARD_LINKS, start=1):

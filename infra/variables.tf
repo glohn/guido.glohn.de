@@ -20,7 +20,7 @@ variable "dns_zone" {
 }
 
 variable "price_class" {
-  description = "CloudFront price class. PriceClass_100 = North America, Europe, Israel."
+  description = "CloudFront price class. PriceClass_100 = Europe, Israel, Türkiye, USA, Canada, Mexico (occasionally other edges, see privacy policy)."
   type        = string
   default     = "PriceClass_100"
 }

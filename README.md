@@ -43,6 +43,11 @@ Current profile image: `blueprint_final.png` (1254 × 1254) with `--crop 137,40,
 Photos are cropped to a square, resized and saved without metadata. With a
 real photo the vCard also gets the picture.
 
+Privacy policy: `site/datenschutz/` (German, authoritative) and `site/privacy/`
+(English). Keep both in sync with what the site and `glohn-mail` actually do
+(hosting, price class, logs, mail forwarding, retention). There is deliberately
+no Impressum.
+
 Local preview: `python3 -m http.server -d site 8000`, then open http://localhost:8000.
 
 Deploy:

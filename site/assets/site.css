@@ -343,6 +343,63 @@ footer {
   color: var(--blueprint);
 }
 
+/* Legal pages (Datenschutz): wider, left-aligned running text */
+main.legal {
+  max-width: 40rem;
+  gap: 1.25rem;
+}
+
+.legal .back {
+  font-size: 0.9rem;
+}
+
+.legal .back a,
+.legal p a {
+  color: var(--accent);
+}
+
+.legal .stand {
+  margin-top: -0.75rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.legal h2 {
+  margin: 0 0 0.4rem;
+  font-family: inherit;
+  font-size: 1.05rem;
+  letter-spacing: 0;
+  text-transform: none;
+  text-align: left;
+  color: var(--ink);
+}
+
+.legal p + p {
+  margin-top: 0.6rem;
+}
+
+.legal p {
+  color: var(--ink);
+  line-height: 1.6;
+}
+
+.legal .stand a {
+  color: var(--accent);
+}
+
+/* Art. 21(4) GDPR: right to object shown separately from other information */
+.legal .notice {
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--line-strong);
+  border-left: 4px solid var(--accent);
+  border-radius: 10px;
+  background: var(--panel);
+}
+
+footer a {
+  color: inherit;
+}
+
 /* 404 */
 .notfound {
   text-align: center;
