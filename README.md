@@ -14,6 +14,7 @@ site/                 what gets deployed
   index.html          link page
   qr/index.html       full-screen QR code (keeps the screen on while shown)
   404.html
+  favicon.ico         monogram for clients that ignore the SVG icon (generated)
   guido-lohn.vcf      contact card            (generated)
   assets/             css, js, icons, images  (QR code, icons, og-card generated)
 tools/

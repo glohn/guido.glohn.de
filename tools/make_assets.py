@@ -138,6 +138,8 @@ def blueprint_grid(img: Image.Image) -> Image.Image:
 
 def make_icons() -> None:
     monogram(180).save(ASSETS / "apple-touch-icon.png", optimize=True)
+    # Same round monogram as favicon.svg, for clients that request /favicon.ico directly.
+    circle(monogram(256), 256).save(SITE / "favicon.ico", sizes=[(16, 16), (32, 32), (48, 48)])
 
     og = blueprint_grid(Image.new("RGB", (1200, 630), DARK_BG))
     with Image.open(PROFILE) as profile:
