@@ -39,6 +39,7 @@ MONOGRAM = "GL"
 VCARD_LINKS = [
     ("Website", URL),
     ("LinkedIn", "https://www.linkedin.com/in/guido-lohn"),
+    ("XING", "https://www.xing.com/profile/Guido_Lohn"),
     ("GitHub", "https://github.com/glohn"),
 ]
 
